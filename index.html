@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LexAi — Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --border: #1f2433;
+      --accent: #6c8fff;
+      --accent2: #a78bfa;
+      --text: #e8eaf0;
+      --muted: #6b7280;
+      --card: #161a24;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(108,143,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108,143,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow {
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(108,143,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 72px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(108,143,255,0.08);
+      border: 1px solid rgba(108,143,255,0.2);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 54px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 48px 0;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 48px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    section:nth-child(1) { animation-delay: 0.05s; }
+    section:nth-child(2) { animation-delay: 0.10s; }
+    section:nth-child(3) { animation-delay: 0.15s; }
+    section:nth-child(4) { animation-delay: 0.20s; }
+    section:nth-child(5) { animation-delay: 0.25s; }
+    section:nth-child(6) { animation-delay: 0.30s; }
+    section:nth-child(7) { animation-delay: 0.35s; }
+    section:nth-child(8) { animation-delay: 0.40s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      font-size: 15px;
+      color: #9ca3af;
+      margin-bottom: 12px;
+    }
+
+    /* Data cards */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 520px) {
+      .data-grid { grid-template-columns: 1fr; }
+    }
+
+    .data-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      transition: border-color 0.2s;
+    }
+
+    .data-card:hover { border-color: rgba(108,143,255,0.3); }
+
+    .data-card .icon {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .data-card .label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .data-card .desc {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0;
+    }
+
+    /* Third party table */
+    .services {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.4fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-row:last-child { border-bottom: none; }
+
+    .service-row.header {
+      background: rgba(108,143,255,0.05);
+    }
+
+    .service-row .cell {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #6b7280;
+      border-right: 1px solid var(--border);
+    }
+
+    .service-row .cell:last-child { border-right: none; }
+
+    .service-row.header .cell {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: rgba(108,143,255,0.05);
+      border: 1px solid rgba(108,143,255,0.15);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+
+    .highlight p { margin: 0; font-size: 14px; }
+
+    /* Contact */
+    .contact-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer span {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="container">
+
+    <header>
+      <div class="badge">Legal document</div>
+      <h1>Privacy Policy<br>for <em>LexAi</em></h1>
+      <p class="meta">Effective date: 2026-01-01 &nbsp;·&nbsp; Last updated: 2026-01-01</p>
+    </header>
+
+    <div class="divider"></div>
+
+    <section>
+      <div class="section-num">01 / OVERVIEW</div>
+      <h2>About this Policy</h2>
+      <p>LexAi ("the App", "we", "our") is a mobile vocabulary-learning application built on .NET MAUI for Android (iOS planned). This Privacy Policy explains what data we collect, why we collect it, and how we protect it.</p>
+      <p>By using LexAi, you agree to the practices described here. If you disagree, please discontinue use of the App.</p>
+    </section>
+
+    <section>
+      <div class="section-num">02 / DATA WE COLLECT</div>
+      <h2>Information We Process</h2>
+      <p>We collect only what is necessary to provide and improve the service:</p>
+
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="icon">🔐</div>
+          <div class="label">Account data</div>
+          <p class="desc">Email address and authentication token provided via Auth0 during sign-up or login.</p>
+        </div>
+        <div class="data-card">
+          <div class="icon">📚</div>
+          <div class="label">Vocabulary data</div>
+          <p class="desc">Words, translations, groups, and learning progress you create in the App.</p>
+        </div>
+        <div class="data-card">
+          <div class="icon">📷</div>
+          <div class="label">Photos (optional)</div>
+          <p class="desc">Images you submit for OCR text recognition. Processed via Google ML Kit and not stored.</p>
+        </div>
+        <div class="data-card">
+          <div class="icon">🎙️</div>
+          <div class="label">Voice (optional)</div>
+          <p class="desc">Audio for word import via voice. Transcribed by OpenAI Whisper API and not retained.</p>
+        </div>
+        <div class="data-card">
+          <div class="icon">📊</div>
+          <div class="label">Usage analytics</div>
+          <p class="desc">Anonymous event data (sessions, feature usage) to improve the App experience.</p>
+        </div>
+        <div class="data-card">
+          <div class="icon">📱</div>
+          <div class="label">Device info</div>
+          <p class="desc">OS version and device model for crash diagnostics and compatibility.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-num">03 / HOW WE USE DATA</div>
+      <h2>Purpose of Processing</h2>
+      <p>Your data is used exclusively for:</p>
+      <p>• Providing core app functionality (vocabulary, training sessions, AI enrichment)<br>
+         • Synchronising your progress across devices<br>
+         • Generating AI-enriched word details (examples, grammar forms) via OpenAI GPT-4o-mini<br>
+         • Generating thematic word images via fal.ai<br>
+         • Enabling AI conversation practice in the target language<br>
+         • Authenticating your account securely via Auth0<br>
+         • Diagnosing crashes and improving stability</p>
+
+      <div class="highlight">
+        <p>We do <strong>not</strong> sell, rent, or trade your personal data to any third party for advertising or marketing purposes.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-num">04 / THIRD-PARTY SERVICES</div>
+      <h2>Subprocessors</h2>
+      <p>LexAi integrates several third-party services to deliver its functionality. Each operates under its own privacy policy:</p>
+
+      <div class="services">
+        <div class="service-row header">
+          <div class="cell">Service</div>
+          <div class="cell">Purpose</div>
+          <div class="cell">Privacy Policy</div>
+        </div>
+        <div class="service-row">
+          <div class="cell">OpenAI</div>
+          <div class="cell">Word enrichment, chat, voice</div>
+          <div class="cell">openai.com/policies/privacy</div>
+        </div>
+        <div class="service-row">
+          <div class="cell">fal.ai</div>
+          <div class="cell">Word image generation</div>
+          <div class="cell">fal.ai/privacy</div>
+        </div>
+        <div class="service-row">
+          <div class="cell">Auth0 (Okta)</div>
+          <div class="cell">Authentication</div>
+          <div class="cell">auth0.com/privacy</div>
+        </div>
+        <div class="service-row">
+          <div class="cell">Google ML Kit</div>
+          <div class="cell">OCR, offline translation</div>
+          <div class="cell">policies.google.com/privacy</div>
+        </div>
+        <div class="service-row">
+          <div class="cell">OpenAI Whisper</div>
+          <div class="cell">Voice transcription</div>
+          <div class="cell">openai.com/policies/privacy</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-num">05 / DATA RETENTION</div>
+      <h2>How Long We Keep Data</h2>
+      <p>Your vocabulary data and account information are retained for as long as you maintain an active account. Voice recordings and photos used for import are processed in real time and not stored on our servers.</p>
+      <p>Upon account deletion, all personal data is permanently removed within 30 days.</p>
+    </section>
+
+    <section>
+      <div class="section-num">06 / YOUR RIGHTS</div>
+      <h2>User Rights</h2>
+      <p>You have the right to:</p>
+      <p>• <strong>Access</strong> — request a copy of your personal data<br>
+         • <strong>Correction</strong> — update inaccurate information<br>
+         • <strong>Deletion</strong> — request removal of your account and data<br>
+         • <strong>Portability</strong> — export your vocabulary in a machine-readable format<br>
+         • <strong>Objection</strong> — opt out of non-essential analytics</p>
+      <p>To exercise any of these rights, contact us using the details in Section 08.</p>
+    </section>
+
+    <section>
+      <div class="section-num">07 / CHILDREN</div>
+      <h2>Children's Privacy</h2>
+      <p>LexAi is not directed at children under the age of 13. We do not knowingly collect personal information from children. If we become aware that a child has provided data without parental consent, we will delete it promptly.</p>
+    </section>
+
+    <section>
+      <div class="section-num">08 / CONTACT</div>
+      <h2>Questions & Requests</h2>
+      <p>If you have any questions about this Privacy Policy or wish to exercise your data rights, please reach out:</p>
+      <div class="contact-block">
+        <p style="color: var(--muted); font-size: 13px; margin-bottom: 10px;">Developer / Data Controller</p>
+        <a href="mailto:lexai.m.app@gmail.com">lexai.m.app@gmail.com</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <footer>
+      <span>LexAi · Privacy Policy</span>
+      <span>v1.0 · 2026</span>
+    </footer>
+
+    </div>
+  </body>
+</html>
